@@ -37,9 +37,9 @@ Status: 200
 Hostname: 8de1402a4966
 Name: ecko
 RemoteAddr: 172.17.0.1:33746
-IP: 127.0.0.1
-IP: ::1
-IP: 172.17.0.2
+IP[0]: 127.0.0.1
+IP[1]: ::1
+IP[2]: 172.17.0.2
 Method: POST
 URL: /echo
 Host: localhost:8080

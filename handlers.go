@@ -119,8 +119,8 @@ func echoResponseToText(w http.ResponseWriter, r *http.Request, statusCode int, 
 	fmt.Fprintf(w, "Name: %s\n", data.Name)
 	fmt.Fprintf(w, "RemoteAddr: %s\n", data.RemoteAddr)
 
-	for _, ip := range data.IP {
-		fmt.Fprintf(w, "IP: %s\n", ip)
+	for i, ip := range data.IP {
+		fmt.Fprintf(w, "IP[%d]: %s\n", i, ip)
 	}
 
 	fmt.Fprintf(w, "Method: %s\n", data.Method)
@@ -129,7 +129,13 @@ func echoResponseToText(w http.ResponseWriter, r *http.Request, statusCode int, 
 
 	fmt.Fprintf(w, "\nHeaders:\n")
 	for key, values := range data.Headers {
-		fmt.Fprintf(w, "%s: %s\n", key, strings.Join(values, ", "))
+		if len(values) > 1 {
+			for i, value := range values {
+				fmt.Fprintf(w, "%s[%d]: %s\n", key, i, value)
+			}
+		} else {
+			fmt.Fprintf(w, "%s: %s\n", key, values[0])
+		}
 	}
 
 	if data.RequestBody != "" {
