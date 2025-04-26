@@ -14,7 +14,6 @@ import (
 
 type HandlerFunc func(w http.ResponseWriter, r *http.Request, logRequestDetails bool)
 
-// EchoResponse whoami information.
 type EchoResponse struct {
 	Hostname    string      `json:"hostname,omitempty"`
 	IP          []string    `json:"ip,omitempty"`
@@ -28,7 +27,7 @@ type EchoResponse struct {
 }
 
 // buildEchoResponse creates an EchoResponse from the request
-func buildEchoResponse(r *http.Request, statusCode int, logRequestDetails bool) EchoResponse {
+func buildEchoResponse(r *http.Request, logRequestDetails bool) EchoResponse {
 	queryParams := r.URL.Query()
 
 	wait := queryParams.Get("wait")
@@ -99,7 +98,7 @@ func buildEchoResponse(r *http.Request, statusCode int, logRequestDetails bool) 
 }
 
 func apiHandler(w http.ResponseWriter, r *http.Request, logRequestDetails bool) {
-	data := buildEchoResponse(r, http.StatusOK, logRequestDetails)
+	data := buildEchoResponse(r, logRequestDetails)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
@@ -110,7 +109,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request, logRequestDetails bool) 
 }
 
 func echoResponseToText(w http.ResponseWriter, r *http.Request, statusCode int, logRequestDetails bool) {
-	data := buildEchoResponse(r, statusCode, logRequestDetails)
+	data := buildEchoResponse(r, logRequestDetails)
 
 	w.WriteHeader(statusCode)
 
