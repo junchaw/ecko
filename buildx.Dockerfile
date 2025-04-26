@@ -10,7 +10,7 @@ RUN apk --no-cache --no-progress add git ca-certificates make \
 FROM alpine:3.21.3
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY bin/ecko /
+COPY ecko /
 
 ENTRYPOINT ["/ecko"]
 EXPOSE 80
