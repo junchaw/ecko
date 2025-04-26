@@ -15,10 +15,10 @@ var (
 )
 
 func init() {
-	flag.BoolVar(&logRequestDetails, "log-request-details", true, "Log request details including body")
-	flag.StringVar(&port, "port", getEnv("ECKO_PORT", "8080"), "give me a port number")
-	flag.StringVar(&name, "name", getEnv("ECKO_NAME", "ecko"), "give me a name")
-	flag.StringVar(&host, "host", "0.0.0.0", "host to listen on")
+	flag.BoolVar(&logRequestDetails, "log-request-details", true, "log request details including body")
+	flag.StringVar(&name, "name", getEnv("ECKO_SERVER_NAME", "ecko"), "name of the server, will appear in the response")
+	flag.StringVar(&port, "port", getEnv("ECKO_LISTEN_PORT", "8080"), "port number to listen on")
+	flag.StringVar(&host, "host", getEnv("ECKO_LISTEN_HOST", "0.0.0.0"), "host to listen")
 }
 
 func main() {
