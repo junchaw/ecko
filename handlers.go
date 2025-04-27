@@ -147,12 +147,14 @@ func echoHandler(w http.ResponseWriter, r *http.Request, logRequestDetails bool)
 	echoResponseToText(w, r, http.StatusOK, logRequestDetails)
 }
 
-func statusHandler(w http.ResponseWriter, req *http.Request, logRequestDetails bool) {
-	code := req.URL.Path[len("/status/"):]
-	statusCode, err := strconv.Atoi(code)
-	if err != nil {
-		http.Error(w, "Invalid status code", http.StatusBadRequest)
-		return
+func makeStatusHandler(endpoint string) HandlerFunc {
+	return func(w http.ResponseWriter, req *http.Request, logRequestDetails bool) {
+		code := req.URL.Path[len(endpoint):]
+		statusCode, err := strconv.Atoi(code)
+		if err != nil {
+			http.Error(w, "Invalid status code", http.StatusBadRequest)
+			return
+		}
+		echoResponseToText(w, req, statusCode, logRequestDetails)
 	}
-	echoResponseToText(w, req, statusCode, logRequestDetails)
 }
