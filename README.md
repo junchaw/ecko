@@ -5,7 +5,7 @@
 </div>
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/junchaw/ecko.svg)](https://hub.docker.com/r/junchaw/ecko/)
-[![Build Status](https://github.com/junchaw/ecko/workflows/Main/badge.svg?branch=main)](https://github.com/junchaw/ecko/actions)
+[![Release a tag](https://github.com/junchaw/ecko/actions/workflows/release.yml/badge.svg)](https://github.com/junchaw/ecko/actions/workflows/release.yml)
 
 HTTP echo server that returns and logs all request details for debugging.
 
