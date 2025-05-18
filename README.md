@@ -6,8 +6,9 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/junchaw/ecko)](https://goreportcard.com/report/github.com/junchaw/ecko)
 [![License](https://img.shields.io/github/license/junchaw/ecko?color=blue)](https://github.com/junchaw/ecko/blob/main/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/junchaw/ecko.svg)](https://hub.docker.com/r/junchaw/ecko/)
 [![Release a tag](https://github.com/junchaw/ecko/actions/workflows/release.yml/badge.svg)](https://github.com/junchaw/ecko/actions/workflows/release.yml)
+[![Releases](https://img.shields.io/github/v/release/junchaw/ecko)](https://github.com/junchaw/ecko/releases)
+[![Docker Pulls](https://img.shields.io/docker/pulls/junchaw/ecko.svg)](https://hub.docker.com/r/junchaw/ecko/)
 
 HTTP echo server that returns and logs all request details for debugging.
 
