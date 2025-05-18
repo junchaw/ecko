@@ -4,6 +4,8 @@
   <img src="docs/logo.png" alt="ecko logo" width="200">
 </div>
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/junchaw/ecko)](https://goreportcard.com/report/github.com/junchaw/ecko)
+[![License](https://img.shields.io/github/license/junchaw/ecko?color=blue)](https://github.com/junchaw/ecko/blob/main/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/junchaw/ecko.svg)](https://hub.docker.com/r/junchaw/ecko/)
 [![Release a tag](https://github.com/junchaw/ecko/actions/workflows/release.yml/badge.svg)](https://github.com/junchaw/ecko/actions/workflows/release.yml)
 
