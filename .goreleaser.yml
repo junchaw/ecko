@@ -38,7 +38,7 @@ brews:
   - name: ecko
     repository:
       owner: junchaw
-      name: homebrew
+      name: homebrew-awesome
 
 docker_manifests:
   - name_template: 'junchaw/ecko:{{ .Tag }}'
