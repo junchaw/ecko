@@ -13,22 +13,47 @@ HTTP echo server that returns and logs all request details for debugging.
 
 > Why not [traefik/whoami](https://github.com/traefik/whoami)? Because ecko logs request details, I find it extremely useful when developing webhooks where I want to know what's being sent to me.
 
-## Usage
+## Installation
 
-Run the server:
+#### # With Homebrew
+
+```shell
+brew tap junchaw/awesome
+brew install ecko
+ecko -h
+```
+
+#### # With Docker
 
 ```shell
 docker run -p 8080:8080 junchaw/ecko -h
-docker run -p 8080:8080 junchaw/ecko
 ```
+
+#### # Download from release page
+
+First, download tar file from the [release page](https://github.com/junchaw/ecko/releases).
+
+After downloading the tar file, extract it, then put `ecko` in your `PATH`.
+
+#### # Build from source
+
+```shell
+git clone https://github.com/junchaw/ecko.git
+cd ecko && make build
+./bin/ecko -h
+```
+
+## Usage
+
+Run the server, then you can access the endpoints.
 
 ### Endpoints
 
-#### `/`
+#### # `/`
 
 Print help.
 
-#### `/echo`
+#### # `/echo`
 
 Print echo response.
 
@@ -59,7 +84,7 @@ Request Body:
 {"hello":"world"}
 ```
 
-#### `/api`
+#### # `/api`
 
 Print echo response as JSON.
 
@@ -105,7 +130,7 @@ Sample response:
 }
 ```
 
-#### `/status/{code}`
+#### # `/status/{code}`
 
 Return the specified HTTP status code.
 
